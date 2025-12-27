@@ -27,6 +27,9 @@ jobs:
       
       - name: Build
         run: pwsh -ep bypass ./tools/publish.ps1
+
+      - name: Checksum
+        run: pwsh -ep bypass ./tools/generate-md5.ps1
       
       - name: Upload artifact
         uses: actions/upload-artifact@v4
