@@ -4,6 +4,7 @@ Write-Host "处理路径: $path" -ForegroundColor Green
 
 # 删除旧的 .md5sum 文件
 Remove-Item "$path/*.md5sum" -ErrorAction SilentlyContinue
+Remove-Item "$path/*.md" -ErrorAction SilentlyContinue
 
 $files = Get-ChildItem $path
 $hashes = [ordered]@{}
