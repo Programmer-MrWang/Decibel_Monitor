@@ -27,9 +27,6 @@ jobs:
       
       - name: Build
         run: pwsh -ep bypass ./tools/publish.ps1
-
-      - name: Md5
-        run: pwsh -ep bypass ./tools/generate-md5.ps1 cipx/
       
       - name: Upload artifact
         uses: actions/upload-artifact@v4
