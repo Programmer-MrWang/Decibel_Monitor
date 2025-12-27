@@ -30,6 +30,12 @@ jobs:
 
       - name: Checksum
         run: pwsh -ep bypass ./tools/generate-md5.ps1 cipx/
+
+      - name: Debug checksum file
+        run: |
+          ls -la ./cipx/
+          wc -l ./cipx/checksums.md  # 查看行数
+          head -50 ./cipx/checksums.md  # 查看前50行内容
       
       - name: Upload artifact
         uses: actions/upload-artifact@v4
