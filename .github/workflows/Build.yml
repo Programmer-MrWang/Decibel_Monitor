@@ -29,13 +29,14 @@ jobs:
         run: pwsh -ep bypass ./tools/publish.ps1
 
       - name: Md5
-        run: pwsh -ep bypass ./tools/generate-md5.ps1 Decibel_Monitor/bin/Debug/net8.0-windows/
+        run: pwsh -ep bypass ./tools/generate-md5.ps1 checksums/
       
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           path: |
-            ./cipx/*.cipx/checksums.md
+            ./cipx/*.cipx
+            ./checksums/checksums.md
           name: Decibel_Monitor-Actions
       
       - name: Upload APP to release
